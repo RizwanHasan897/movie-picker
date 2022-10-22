@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
     <title>Movie Picker</title>
 </head>
 <body>
+    <header>
+        <div>
+            <h1>Find Your Film</h1>
+            <button id="watchlist-page"> My Watchlist</button>
+        </div>
+    </header>
+
+    <div class="search-bar" id="search-bar">
+        <input type="text" id="search-input" placeholder="Search for a Movie"/>
+        <button id="search-btn">Search</button>
+    </div>
+    <div class="movie-container" id="movie-container">
+
+        <div class="start-img" id="start-img">
+            <img id="start-exploring" src="image/no-data-initial.png" />
+        </div>
     
+    </div>
+
+    <div class="watchlist-container hidden" id="watchlist-container">
+        
+    </div>
 
 
-    <script src="index.js"></script>
+    </div>
+    <script src="index.js" type="module"></script>
 </body>
 </html>
