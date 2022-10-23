@@ -7,6 +7,11 @@ const watchlistContainer = document.getElementById('watchlist-container')
 const watchlistPage = document.getElementById('watchlist-page')
 const startImg = document.getElementById('start-img')
 
+watchlistPage.addEventListener('click', addWatchlist)
+
+document.addEventListener('click', getWatchlistArray)
+
+let watchlistArray = []
 
 searchBtn.addEventListener('click', e => {
 
@@ -53,13 +58,6 @@ searchBtn.addEventListener('click', e => {
             }
         })
 })
-
-
-watchlistPage.addEventListener('click', addWatchlist)
-
-document.addEventListener('click', getWatchlistArray)
-
-let watchlistArray = []
 
 function getWatchlistArray(e) {
 
