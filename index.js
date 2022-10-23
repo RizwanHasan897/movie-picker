@@ -61,14 +61,23 @@ searchBtn.addEventListener('click', e => {
 
 function getWatchlistArray(e) {
 
+    let movieDiv = e.target.parentElement.parentElement.parentElement
+    let watchlistDiv = e.target.parentElement.parentElement
+    let watchlistTitle = watchlistDiv.children[0].children[0].textContent
+
     if (e.target.id === 'watchlist') {
 
-        let watchlistDiv = e.target.parentElement.parentElement
-        let watchlistTitle = watchlistDiv.children[0].children[0].textContent
 
         watchlistArray.push(watchlistTitle)
         renderWatchlist()
     }
+
+    if (e.target.id === 'remove') {
+        movieDiv.remove()
+
+    }
+
+    return watchlistTitle
 }
 
 
