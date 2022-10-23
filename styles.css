@@ -98,3 +98,8 @@ header > div > button {
 .hidden {
     display: none;
 }
+
+.empty-watchlist {
+    align-self: center;
+    color: grey;
+}

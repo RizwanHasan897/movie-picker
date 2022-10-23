@@ -5,11 +5,12 @@ const startExploring = document.getElementById('start-exploring')
 const movieContainer = document.getElementById('movie-container')
 const watchlistContainer = document.getElementById('watchlist-container')
 const watchlistPage = document.getElementById('watchlist-page')
+const startImg = document.getElementById('start-img')
 
 
 searchBtn.addEventListener('click', e => {
 
-    startExploring.classList.add('hidden')
+    movieContainer.innerHTML = ""
 
     fetch(`http://www.omdbapi.com/?apikey=5f9fe61a&s=${searchInput.value}`)
         .then(res => res.json())
@@ -76,6 +77,9 @@ function getWatchlistArray(e) {
 
 function renderWatchlist() {
 
+    watchlistContainer.innerHTML = "<h1>My watchList </h1>"
+
+
     watchlistArray.forEach(function (movie) {
         fetch(`https://www.omdbapi.com/?apikey=5f9fe61a&t=${movie}&plot=full`)
             .then(res => res.json())
@@ -96,7 +100,7 @@ function renderWatchlist() {
                                 <div class="movie-short-info">
                                     <p>${movie.Runtime}</p>
                                     <p>${movie.Genre}</p>
-                                    <button class="watchlist" id="watchlist"><strong>&#10753;</strong> Watchlist</button>
+                                    <button class="remove" id="remove"><strong>&#10753;</strong> remove </button>
                                 </div>
 
                                 <div class="movie-info">
@@ -115,16 +119,6 @@ function renderWatchlist() {
 
 function addWatchlist(e) {
 
-    // const set = new Set(watchlistArray)
-
-    // const myWatchlist = watchlistArray.filter(item => {
-    //     if(Set.has(item)){
-    //         set.delete(item)
-    //     } else {
-    //         return item
-    //     }
-    // })
-
     console.log(watchlistArray)
 
     movieContainer.classList.toggle('hidden')
@@ -132,6 +126,7 @@ function addWatchlist(e) {
 
     if (movieContainer.classList.contains('hidden')) {
         watchlistContainer.classList.remove('hidden')
+
     } else {
         watchlistContainer.classList.add('hidden')
     }
@@ -140,4 +135,3 @@ function addWatchlist(e) {
 
 }
 
-renderWatchlist()
