@@ -125,7 +125,6 @@ function renderWatchlist() {
 
 function addWatchlist(e) {
 
-    console.log(watchlistArray)
 
     movieContainer.classList.toggle('hidden')
     searchbarContainer.classList.toggle('hidden')
@@ -136,8 +135,5 @@ function addWatchlist(e) {
     } else {
         watchlistContainer.classList.add('hidden')
     }
-    console.log('hidden')
-
-
 }
 
