@@ -84,6 +84,7 @@ header > div > button {
 .movie > img {
     width: 15%;
     margin: 20px;
+    object-fit: cover;
 }
 
 .movie-info{
